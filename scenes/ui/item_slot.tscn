@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://bmc61ftbjl5k4"]
+
+[ext_resource type="Script" uid="uid://bwgeffekj224q" path="res://scenes/ui/item_slot.gd" id="1_uw4km"]
+
+[node name="ItemSlot" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uw4km")
+
+[node name="Icon" type="TextureRect" parent="."]
+layout_mode = 2
+
+[node name="CountLabel" type="Label" parent="."]
+layout_mode = 2

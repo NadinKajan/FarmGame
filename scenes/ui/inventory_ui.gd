@@ -1,6 +1,6 @@
 extends Control
 
-@onready var log_label: Label = $HBoxContainer/LogLabel
+@onready var log_label: Label = $Slots/LogLabel
 
 func _ready() -> void:
 	# Update whenever inventory changes
@@ -9,4 +9,4 @@ func _ready() -> void:
 
 func update_ui() -> void:
 	var count := Inventory.get_count("log")
-	log_label.text = "Logs: %d" % count
+	log_label.text = "Logs: " % count
