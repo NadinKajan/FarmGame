@@ -11,12 +11,10 @@ func _ready() -> void:
 	damage_component.max_damage_reached.connect(on_max_damage_reached)
 	
 func on_hurt(hit_damage: int) -> void:
-	print("Tree Hurt")
 	damage_component.apply_damage(hit_damage)
 	
 func on_max_damage_reached() -> void:
 	call_deferred("add_log_scene")
-	print("Max Damage Reached!")
 	queue_free()
 	
 func add_log_scene() -> void:

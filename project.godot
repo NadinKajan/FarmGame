@@ -15,6 +15,10 @@ run/main_scene="uid://denf4ke2lhpq8"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://assets/game/icon.svg"
 
+[autoload]
+
+Inventory="*res://scripts/inventory/inventory_script.gd"
+
 [display]
 
 window/size/viewport_width=640
