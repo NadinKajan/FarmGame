@@ -7,14 +7,10 @@ extends VBoxContainer
 @onready var count_label: Label = $CountLabel
 
 func _ready() -> void:
-	# Set the icon
-	icon.texture = icon_texture
-
-	# Listen for inventory changes
-	Inventory.changed.connect(update_slot)
-
-	# Initial value
-	update_slot()
+	
+	icon.texture = icon_texture # set the icon
+	Inventory.changed.connect(update_slot) # listen for inventory changes
+	update_slot() # initial value
 
 func update_slot() -> void:
 	var count := Inventory.get_count(item_id)
