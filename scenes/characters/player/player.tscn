@@ -1,8 +1,9 @@
-[gd_scene load_steps=54 format=3 uid="uid://by3ebmdoptpve"]
+[gd_scene load_steps=56 format=3 uid="uid://by3ebmdoptpve"]
 
 [ext_resource type="Script" uid="uid://d3vkaptbdrrlw" path="res://scenes/characters/player/player.gd" id="1_6avc5"]
 [ext_resource type="Texture2D" uid="uid://c72ean6pxy2m7" path="res://assets/game/sprout_lands/Characters/Basic Charakter Actions.png" id="1_t61fv"]
 [ext_resource type="Texture2D" uid="uid://bkvtin80xniif" path="res://assets/game/sprout_lands/Characters/Basic Charakter Spritesheet.png" id="2_686vu"]
+[ext_resource type="Resource" uid="uid://btt3we38p7ued" path="res://scripts/inventory/player_inventory.tres" id="2_djydg"]
 [ext_resource type="Script" uid="uid://b52s4fh7qqf34" path="res://scripts/state_machine/node_state_machine.gd" id="3_hss88"]
 [ext_resource type="Script" uid="uid://dt2st0ocoh3bh" path="res://scenes/characters/player/idle_state.gd" id="4_qd3e3"]
 [ext_resource type="Script" uid="uid://d08gle87rscwr" path="res://scenes/characters/player/walk_state.gd" id="5_qd3e3"]
@@ -10,6 +11,7 @@
 [ext_resource type="Script" uid="uid://8xfa8ai4rucu" path="res://scenes/characters/player/tilling_state.gd" id="8_xuses"]
 [ext_resource type="Script" uid="uid://nmi5hoojh5fj" path="res://scenes/characters/player/watering_state.gd" id="9_42irl"]
 [ext_resource type="PackedScene" uid="uid://bxjyc4sip2x2e" path="res://scenes/components/hit_component.tscn" id="10_3xnwo"]
+[ext_resource type="PackedScene" uid="uid://dmf7pqmvuwqsv" path="res://scripts/inventory/inventory_ui.tscn" id="12_bsn6e"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hss88"]
 atlas = ExtResource("1_t61fv")
@@ -403,14 +405,13 @@ radius = 3.0
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
 script = ExtResource("1_6avc5")
+inv = ExtResource("2_djydg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_omk8d")
-animation = &"chopping_right"
+animation = &"idle_front"
 autoplay = "idle_front"
-frame = 1
-frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -6)
@@ -451,3 +452,5 @@ animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 [node name="HitComponentCollisionShape2D" type="CollisionShape2D" parent="HitComponent"]
 shape = SubResource("CircleShape2D_djydg")
 debug_color = Color(0.8351121, 0.3874031, 0.08553567, 0.41960785)
+
+[node name="Inventory_UI" parent="." instance=ExtResource("12_bsn6e")]
