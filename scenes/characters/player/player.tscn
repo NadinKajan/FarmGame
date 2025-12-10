@@ -400,7 +400,7 @@ animations = [{
 radius = 4.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_djydg"]
-radius = 3.0
+radius = 7.0
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
@@ -410,8 +410,10 @@ inv = ExtResource("2_djydg")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_omk8d")
-animation = &"idle_front"
+animation = &"chopping_left"
 autoplay = "idle_front"
+frame = 1
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -6)
@@ -450,7 +452,12 @@ animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 [node name="HitComponent" parent="." instance=ExtResource("10_3xnwo")]
 
 [node name="HitComponentCollisionShape2D" type="CollisionShape2D" parent="HitComponent"]
+position = Vector2(-12, -1)
 shape = SubResource("CircleShape2D_djydg")
 debug_color = Color(0.8351121, 0.3874031, 0.08553567, 0.41960785)
 
 [node name="Inventory_UI" parent="." instance=ExtResource("12_bsn6e")]
+offset_left = -320.0
+offset_top = -180.0
+offset_right = -292.0
+offset_bottom = 13.0

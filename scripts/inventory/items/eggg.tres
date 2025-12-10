@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://dlbd7d3mslbpo"]
+
+[ext_resource type="Script" uid="uid://7ank74iob5k6" path="res://scripts/inventory/inventory_item.gd" id="1_7pik1"]
+[ext_resource type="Texture2D" uid="uid://d3kamqvogti71" path="res://assets/game/sprout_lands/Objects/Egg_item.png" id="2_1snhh"]
+
+[resource]
+script = ExtResource("1_7pik1")
+name = "eggg"
+texture = ExtResource("2_1snhh")
+metadata/_custom_type_script = "uid://7ank74iob5k6"
