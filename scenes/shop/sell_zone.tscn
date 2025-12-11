@@ -1,8 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://bycar56kirn2i"]
+[gd_scene load_steps=14 format=3 uid="uid://bycar56kirn2i"]
 
 [ext_resource type="Script" uid="uid://d1lmtwte25uta" path="res://scenes/shop/sell_zone.gd" id="1_k06jh"]
 [ext_resource type="Texture2D" uid="uid://de8l5k806ju4m" path="res://assets/game/Coin_Gems/MonedaD.png" id="1_mlsqb"]
+[ext_resource type="Resource" uid="uid://d5ekmr2ct2rq" path="res://scripts/inventory/items/carrot.tres" id="2_kasea"]
 [ext_resource type="PackedScene" uid="uid://dvbo50culko58" path="res://scenes/components/interactable_component.tscn" id="3_sqmtp"]
+[ext_resource type="Resource" uid="uid://b6dxe2jpgraq0" path="res://scripts/inventory/items/wheat.tres" id="3_wkar0"]
+[ext_resource type="Resource" uid="uid://iwvcsisbe360" path="res://scripts/inventory/items/tomato.tres" id="4_gip2r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k06jh"]
 atlas = ExtResource("1_mlsqb")
@@ -54,10 +57,13 @@ radius = 11.0
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("1_k06jh")
+carrot_item = ExtResource("2_kasea")
+wheat_item = ExtResource("3_wkar0")
+tomato_item = ExtResource("4_gip2r")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_wkar0")
-frame_progress = 0.98433393
+frame_progress = 0.498839
 
 [node name="InteractableComponent" parent="." instance=ExtResource("3_sqmtp")]
 

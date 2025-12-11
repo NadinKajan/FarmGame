@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://18fenormbg6g"]
+[gd_scene load_steps=13 format=4 uid="uid://18fenormbg6g"]
 
 [ext_resource type="TileSet" uid="uid://bsiobq885lg42" path="res://TileSets/game_tile_set.tres" id="1_0cx3q"]
 [ext_resource type="Script" uid="uid://b1a3l5ypru1k3" path="res://scenes/test/test_scene_shop.gd" id="1_j5322"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://d0vdfadcjwv60" path="res://scenes/objects/crops/tomato_seedpack.tscn" id="5_5ldce"]
 [ext_resource type="PackedScene" uid="uid://blc61wagicaul" path="res://scenes/objects/crops/wheat_seedpack.tscn" id="6_6op5l"]
 [ext_resource type="Texture2D" uid="uid://de8l5k806ju4m" path="res://assets/game/Coin_Gems/MonedaD.png" id="8_aeyxf"]
+[ext_resource type="PackedScene" uid="uid://bb75iaixl5iwv" path="res://scenes/shop/shop.tscn" id="10_5ldce"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j5322"]
 atlas = ExtResource("8_aeyxf")
@@ -81,13 +82,26 @@ position = Vector2(570, 309)
 [node name="WheatSeedpack" parent="." instance=ExtResource("6_6op5l")]
 position = Vector2(505, 309)
 
-[node name="CoinText" type="RichTextLabel" parent="."]
-offset_left = 813.0
-offset_top = 374.0
-offset_right = 853.0
-offset_bottom = 414.0
-text = "= 0"
+[node name="CoinDisplay" type="CanvasLayer" parent="."]
 
-[node name="CoinIcon" type="AnimatedSprite2D" parent="."]
-position = Vector2(800, 385)
+[node name="Control" type="Control" parent="CoinDisplay"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 580.0
+offset_top = 319.0
+offset_right = 620.0
+offset_bottom = 359.0
+
+[node name="CoinText" type="RichTextLabel" parent="CoinDisplay/Control"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 8.0
+offset_right = 67.0
+offset_bottom = 31.0
+
+[node name="CoinIcon" type="AnimatedSprite2D" parent="CoinDisplay/Control"]
+position = Vector2(7, 20)
 sprite_frames = SubResource("SpriteFrames_j5322")
+
+[node name="Shop" parent="." instance=ExtResource("10_5ldce")]
+position = Vector2(603, 188)

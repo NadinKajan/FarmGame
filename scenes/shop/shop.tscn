@@ -1,0 +1,63 @@
+[gd_scene load_steps=10 format=3 uid="uid://bb75iaixl5iwv"]
+
+[ext_resource type="Texture2D" uid="uid://53oo1a1wvepq" path="res://assets/game/farmingTilesheetComplete.png" id="1_100s2"]
+[ext_resource type="Script" uid="uid://bjvp5ah1n430i" path="res://scenes/shop/shop.gd" id="1_qaxay"]
+[ext_resource type="PackedScene" uid="uid://dvbo50culko58" path="res://scenes/components/interactable_component.tscn" id="3_7lxhl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7lxhl"]
+atlas = ExtResource("1_100s2")
+region = Rect2(0, 16, 14, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jp048"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7lxhl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ctpgp"]
+atlas = ExtResource("1_100s2")
+region = Rect2(0, 174, 34, 29)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7lxhl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ctpgp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ptf86"]
+size = Vector2(30, 22)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ge4d2"]
+radius = 14.0
+
+[node name="Shop" type="StaticBody2D"]
+script = ExtResource("1_qaxay")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, -0.5)
+sprite_frames = SubResource("SpriteFrames_jp048")
+
+[node name="ShopArt" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, -7.5)
+sprite_frames = SubResource("SpriteFrames_7lxhl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_ptf86")
+
+[node name="InteractableComponent" parent="." instance=ExtResource("3_7lxhl")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableComponent"]
+position = Vector2(0, 10)
+shape = SubResource("CircleShape2D_ge4d2")
+debug_color = Color(0, 0.6, 0, 0.41960785)

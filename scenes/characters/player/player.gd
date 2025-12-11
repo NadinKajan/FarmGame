@@ -21,3 +21,6 @@ func collect(item: InventoryItem) -> void:
 # Shop Interaction
 func player_sell_method():
 	pass
+
+func player_shop_method():
+	pass
