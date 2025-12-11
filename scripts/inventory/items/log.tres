@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=4 format=3 uid="uid://df61pi3qumws8"]
+
+[ext_resource type="Script" uid="uid://7ank74iob5k6" path="res://scripts/inventory/inventory_item.gd" id="1_cmc1a"]
+[ext_resource type="Texture2D" uid="uid://b4w5ovn4pmmd2" path="res://assets/game/sprout_lands/Objects/Basic_Grass_Biom_things.png" id="2_k5uvo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ld3g"]
+atlas = ExtResource("2_k5uvo")
+region = Rect2(78.726746, 33.96531, 18.99308, 11.474987)
+
+[resource]
+script = ExtResource("1_cmc1a")
+name = "log"
+texture = SubResource("AtlasTexture_3ld3g")
+metadata/_custom_type_script = "uid://7ank74iob5k6"

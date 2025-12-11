@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://cspstsr6t7kgx"]
+[gd_scene load_steps=9 format=3 uid="uid://cspstsr6t7kgx"]
 
 [ext_resource type="Texture2D" uid="uid://x10l70tosctu" path="res://assets/game/sprout_lands/Objects/Basic Grass Biom things 1.png" id="1_a8qts"]
 [ext_resource type="Script" uid="uid://cbrbcplc4l7x8" path="res://scenes/objects/trees/small_tree.gd" id="2_g5iuu"]
 [ext_resource type="PackedScene" uid="uid://tff86calam1c" path="res://scenes/components/hurt_component.tscn" id="2_xyb6m"]
 [ext_resource type="PackedScene" uid="uid://b3i6hbm6bf4y0" path="res://scenes/components/damage_component.tscn" id="3_au4vd"]
+[ext_resource type="Resource" uid="uid://df61pi3qumws8" path="res://scripts/inventory/items/log.tres" id="3_w057i"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xyb6m"]
 atlas = ExtResource("1_a8qts")
@@ -18,6 +19,7 @@ size = Vector2(10, 20)
 [node name="SmallTree" type="Sprite2D"]
 texture = SubResource("AtlasTexture_xyb6m")
 script = ExtResource("2_g5iuu")
+item = ExtResource("3_w057i")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 

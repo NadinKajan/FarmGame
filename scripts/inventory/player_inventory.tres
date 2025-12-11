@@ -1,10 +1,41 @@
-[gd_resource type="Resource" script_class="Inv" load_steps=4 format=3 uid="uid://btt3we38p7ued"]
+[gd_resource type="Resource" script_class="Inv" load_steps=11 format=3 uid="uid://btt3we38p7ued"]
 
-[ext_resource type="Script" uid="uid://7ank74iob5k6" path="res://scripts/inventory/inventory_item.gd" id="1_spl8u"]
 [ext_resource type="Script" uid="uid://pntn7s8laiwa" path="res://scripts/inventory/inventory_main.gd" id="2_kls0t"]
-[ext_resource type="Resource" uid="uid://dlbd7d3mslbpo" path="res://scripts/inventory/items/eggg.tres" id="2_rpwpc"]
+[ext_resource type="Script" uid="uid://b5ccroo0uqgin" path="res://scripts/inventory/inventory_slot.gd" id="2_spl8u"]
+
+[sub_resource type="Resource" id="Resource_kls0t"]
+script = ExtResource("2_spl8u")
+metadata/_custom_type_script = "uid://b5ccroo0uqgin"
+
+[sub_resource type="Resource" id="Resource_rpwpc"]
+script = ExtResource("2_spl8u")
+metadata/_custom_type_script = "uid://b5ccroo0uqgin"
+
+[sub_resource type="Resource" id="Resource_jap24"]
+script = ExtResource("2_spl8u")
+metadata/_custom_type_script = "uid://b5ccroo0uqgin"
+
+[sub_resource type="Resource" id="Resource_sefcj"]
+script = ExtResource("2_spl8u")
+metadata/_custom_type_script = "uid://b5ccroo0uqgin"
+
+[sub_resource type="Resource" id="Resource_5rrv2"]
+script = ExtResource("2_spl8u")
+metadata/_custom_type_script = "uid://b5ccroo0uqgin"
+
+[sub_resource type="Resource" id="Resource_tximb"]
+script = ExtResource("2_spl8u")
+metadata/_custom_type_script = "uid://b5ccroo0uqgin"
+
+[sub_resource type="Resource" id="Resource_byde7"]
+script = ExtResource("2_spl8u")
+metadata/_custom_type_script = "uid://b5ccroo0uqgin"
+
+[sub_resource type="Resource" id="Resource_8kjfh"]
+script = ExtResource("2_spl8u")
+metadata/_custom_type_script = "uid://b5ccroo0uqgin"
 
 [resource]
 script = ExtResource("2_kls0t")
-items = Array[ExtResource("1_spl8u")]([ExtResource("2_rpwpc"), null, null, null, null, null, null, null])
+slots = Array[Resource]([SubResource("Resource_kls0t"), SubResource("Resource_rpwpc"), SubResource("Resource_jap24"), SubResource("Resource_sefcj"), SubResource("Resource_5rrv2"), SubResource("Resource_tximb"), SubResource("Resource_byde7"), SubResource("Resource_8kjfh")])
 metadata/_custom_type_script = "uid://pntn7s8laiwa"
