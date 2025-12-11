@@ -63,7 +63,7 @@ tomato_item = ExtResource("4_gip2r")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_wkar0")
-frame_progress = 0.498839
+frame_progress = 0.34864792
 
 [node name="InteractableComponent" parent="." instance=ExtResource("3_sqmtp")]
 

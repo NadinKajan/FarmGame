@@ -3,6 +3,7 @@ extends StaticBody2D
 var plant = 0
 var plantGrowing = false
 var plantDone = false
+var unlocked = false
 
 @export var crop_collectible_scene: PackedScene
 @export var carrot_item: InventoryItem
@@ -18,17 +19,27 @@ func _physics_process(delta):
 		plant = Global.plantSelected
 
 func _on_area_2d_area_entered(area):
+	print("Area entered. Unlocked: ", unlocked)
+	print("Area entered on zone: ", self.name, " at path: ", self.get_path())
+	if not unlocked:
+		print("Zone is locked, returning")
+		return
+		
 	if !plantGrowing:
 		if plant == 1:
 			plantGrowing = true
+			$Plant.visible = true
 			$CarrotTimer.start()
 			$Plant.play("carrotGrowing")
+		
 		if plant == 2:
 			plantGrowing = true
+			$Plant.visible = true
 			$WheatTimer.start()
 			$Plant.play("wheatGrowing")
 		if plant == 3:
 			plantGrowing = true
+			$Plant.visible = true
 			$TomatoTimer.start()
 			$Plant.play("tomatoGrowing")
 	else: #plant already growing here
@@ -93,6 +104,7 @@ func reset_plot() -> void:
 	plantDone = false
 	plant = 0
 	
+	$Plant.visible = false
 	$Plant.stop()
 	$Plant.animation = "none"
 	$Plant.frame = 0

@@ -1,13 +1,11 @@
-[gd_scene load_steps=13 format=4 uid="uid://18fenormbg6g"]
+[gd_scene load_steps=11 format=4 uid="uid://18fenormbg6g"]
 
 [ext_resource type="TileSet" uid="uid://bsiobq885lg42" path="res://TileSets/game_tile_set.tres" id="1_0cx3q"]
 [ext_resource type="Script" uid="uid://b1a3l5ypru1k3" path="res://scenes/test/test_scene_shop.gd" id="1_j5322"]
 [ext_resource type="PackedScene" uid="uid://bycar56kirn2i" path="res://scenes/shop/sell_zone.tscn" id="2_aeyxf"]
 [ext_resource type="PackedScene" uid="uid://by3ebmdoptpve" path="res://scenes/characters/player/player.tscn" id="2_qxwoi"]
 [ext_resource type="PackedScene" uid="uid://cpjjp6h4qahcv" path="res://scenes/objects/crops/growing_zone.tscn" id="3_aeyxf"]
-[ext_resource type="PackedScene" uid="uid://vrx5cl4ed0w2" path="res://scenes/objects/crops/carrot_seedpack.tscn" id="4_j5322"]
-[ext_resource type="PackedScene" uid="uid://d0vdfadcjwv60" path="res://scenes/objects/crops/tomato_seedpack.tscn" id="5_5ldce"]
-[ext_resource type="PackedScene" uid="uid://blc61wagicaul" path="res://scenes/objects/crops/wheat_seedpack.tscn" id="6_6op5l"]
+[ext_resource type="Resource" uid="uid://df61pi3qumws8" path="res://scripts/inventory/items/log.tres" id="4_6op5l"]
 [ext_resource type="Texture2D" uid="uid://de8l5k806ju4m" path="res://assets/game/Coin_Gems/MonedaD.png" id="8_aeyxf"]
 [ext_resource type="PackedScene" uid="uid://bb75iaixl5iwv" path="res://scenes/shop/shop.tscn" id="10_5ldce"]
 
@@ -57,30 +55,17 @@ tile_set = ExtResource("1_0cx3q")
 
 [node name="SellZone" parent="." instance=ExtResource("2_aeyxf")]
 position = Vector2(510, 225)
+log_item = ExtResource("4_6op5l")
+
+[node name="Shop" parent="." node_paths=PackedStringArray("growingZones") instance=ExtResource("10_5ldce")]
+position = Vector2(603, 188)
+growingZones = [NodePath("../GrowingZone"), NodePath("../GrowingZone2"), NodePath("../GrowingZone3"), NodePath("../GrowingZone4"), NodePath("../GrowingZone5"), NodePath("../GrowingZone6"), NodePath("../GrowingZone7"), NodePath("../GrowingZone8"), NodePath("../GrowingZone9"), NodePath("../GrowingZone10"), NodePath("../GrowingZone11"), NodePath("../GrowingZone12"), NodePath("../GrowingZone13"), NodePath("../GrowingZone14"), NodePath("../GrowingZone15"), NodePath("../GrowingZone16"), NodePath("../GrowingZone17"), NodePath("../GrowingZone18")]
 
 [node name="Player" parent="." instance=ExtResource("2_qxwoi")]
 position = Vector2(551, 227)
 current_tool = 1
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-
-[node name="GrowingZone" parent="." instance=ExtResource("3_aeyxf")]
-position = Vector2(429, 224)
-
-[node name="GrowingZone2" parent="." instance=ExtResource("3_aeyxf")]
-position = Vector2(481, 224)
-
-[node name="GrowingZone3" parent="." instance=ExtResource("3_aeyxf")]
-position = Vector2(453, 223)
-
-[node name="CarrotSeedpack" parent="." instance=ExtResource("4_j5322")]
-position = Vector2(438, 308)
-
-[node name="TomatoSeedpack" parent="." instance=ExtResource("5_5ldce")]
-position = Vector2(570, 309)
-
-[node name="WheatSeedpack" parent="." instance=ExtResource("6_6op5l")]
-position = Vector2(505, 309)
 
 [node name="CoinDisplay" type="CanvasLayer" parent="."]
 
@@ -103,5 +88,74 @@ offset_bottom = 31.0
 position = Vector2(7, 20)
 sprite_frames = SubResource("SpriteFrames_j5322")
 
-[node name="Shop" parent="." instance=ExtResource("10_5ldce")]
-position = Vector2(603, 188)
+[node name="GrowingZone" parent="." instance=ExtResource("3_aeyxf")]
+visible = false
+position = Vector2(431, 253)
+
+[node name="GrowingZone2" parent="." instance=ExtResource("3_aeyxf")]
+visible = false
+position = Vector2(448, 253)
+
+[node name="GrowingZone3" parent="." instance=ExtResource("3_aeyxf")]
+visible = false
+position = Vector2(431, 270)
+
+[node name="GrowingZone4" parent="." instance=ExtResource("3_aeyxf")]
+visible = false
+position = Vector2(448, 270)
+
+[node name="GrowingZone5" parent="." instance=ExtResource("3_aeyxf")]
+visible = false
+position = Vector2(431, 287)
+
+[node name="GrowingZone6" parent="." instance=ExtResource("3_aeyxf")]
+visible = false
+position = Vector2(448, 287)
+
+[node name="GrowingZone7" parent="." instance=ExtResource("3_aeyxf")]
+visible = false
+position = Vector2(495, 253)
+
+[node name="GrowingZone8" parent="." instance=ExtResource("3_aeyxf")]
+visible = false
+position = Vector2(512, 253)
+
+[node name="GrowingZone9" parent="." instance=ExtResource("3_aeyxf")]
+visible = false
+position = Vector2(495, 270)
+
+[node name="GrowingZone10" parent="." instance=ExtResource("3_aeyxf")]
+visible = false
+position = Vector2(512, 270)
+
+[node name="GrowingZone11" parent="." instance=ExtResource("3_aeyxf")]
+visible = false
+position = Vector2(495, 287)
+
+[node name="GrowingZone12" parent="." instance=ExtResource("3_aeyxf")]
+visible = false
+position = Vector2(512, 287)
+
+[node name="GrowingZone13" parent="." instance=ExtResource("3_aeyxf")]
+visible = false
+position = Vector2(559, 253)
+
+[node name="GrowingZone14" parent="." instance=ExtResource("3_aeyxf")]
+visible = false
+position = Vector2(576, 253)
+
+[node name="GrowingZone15" parent="." instance=ExtResource("3_aeyxf")]
+visible = false
+position = Vector2(559, 270)
+
+[node name="GrowingZone16" parent="." instance=ExtResource("3_aeyxf")]
+visible = false
+position = Vector2(576, 270)
+
+[node name="GrowingZone17" parent="." instance=ExtResource("3_aeyxf")]
+visible = false
+position = Vector2(559, 287)
+
+[node name="GrowingZone18" parent="." instance=ExtResource("3_aeyxf")]
+visible = false
+position = Vector2(576, 287)

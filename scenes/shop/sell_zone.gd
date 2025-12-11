@@ -5,6 +5,7 @@ extends StaticBody2D
 @export var carrot_item: InventoryItem
 @export var wheat_item: InventoryItem
 @export var tomato_item: InventoryItem
+@export var log_item: InventoryItem
 @export var sell_interval: float = 0.1 # seconds between each item sold
 
 var is_selling = false
@@ -30,6 +31,7 @@ func _on_interactable_component_body_entered(body):
 	var carrots_sold := 0
 	var wheat_sold := 0
 	var tomatoes_sold := 0
+	var logs_sold := 0
 	
 	# Removing crops from inventory 
 	for slot in inv.slots:
@@ -48,11 +50,15 @@ func _on_interactable_component_body_entered(body):
 			tomatoes_sold += slot.amount
 			slot.item = null
 			slot.amount = 0
+		elif slot.item == log_item:
+			logs_sold += slot.amount
+			slot.item = null
+			slot.amount = 0
 			
 	
 	# Turn crops into coins
-	# carrots = 1 coin, wheat = 2 coins, tomatoes = 3 coins
-	var coins_gained := carrots_sold * 1 + wheat_sold * 2 + tomatoes_sold * 3
+	# logs = 1 coin, carrots = 2 coin, wheat = 4 coins, tomatoes = 6 coins
+	var coins_gained := logs_sold + carrots_sold * 2 + wheat_sold * 4 + tomatoes_sold * 6
 	Global.coins += coins_gained
 	
 	inv.update.emit()

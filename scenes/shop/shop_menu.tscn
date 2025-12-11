@@ -1,0 +1,172 @@
+[gd_scene load_steps=18 format=3 uid="uid://dr523smuqrvbj"]
+
+[ext_resource type="Script" uid="uid://cjgnoo1dgvj5w" path="res://scenes/shop/shop_menu.gd" id="1_kg8fu"]
+[ext_resource type="Texture2D" uid="uid://nlp3gj46r60i" path="res://assets/game/Cute_Fantasy_Free/Outdoor decoration/Outdoor_Decor_Free.png" id="1_xehqv"]
+[ext_resource type="Texture2D" uid="uid://53oo1a1wvepq" path="res://assets/game/farmingTilesheetComplete.png" id="2_4s2ci"]
+[ext_resource type="Texture2D" uid="uid://de8l5k806ju4m" path="res://assets/game/Coin_Gems/MonedaD.png" id="3_2l4cd"]
+[ext_resource type="Texture2D" uid="uid://duthhno5u70o8" path="res://assets/game/sprout_lands/Objects/Basic_tools_and_meterials.png" id="3_4s2ci"]
+[ext_resource type="Texture2D" uid="uid://pmqtx0hvqosd" path="res://assets/game/sprout_lands/Objects/Basic_Plants.png" id="5_pkn56"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_stauu"]
+atlas = ExtResource("1_xehqv")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2l4cd"]
+atlas = ExtResource("3_4s2ci")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wffek"]
+atlas = ExtResource("5_pkn56")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bysch"]
+atlas = ExtResource("1_xehqv")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lu0xe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_stauu")
+}],
+"loop": true,
+"name": &"carrotSeed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2l4cd")
+}],
+"loop": true,
+"name": &"land",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wffek")
+}],
+"loop": true,
+"name": &"tomatoSeed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bysch")
+}],
+"loop": true,
+"name": &"wheatSeed",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yndof"]
+atlas = ExtResource("2_4s2ci")
+region = Rect2(176, 80, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7gft5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yndof")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cu0cr"]
+atlas = ExtResource("2_4s2ci")
+region = Rect2(176, 80, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wgmej"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cu0cr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wx28s"]
+atlas = ExtResource("3_2l4cd")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4722f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wx28s")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="ShopMenu" type="StaticBody2D"]
+script = ExtResource("1_kg8fu")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 56.0
+offset_top = 7.0
+offset_right = 126.0
+offset_bottom = 43.0
+color = Color(0.67295533, 0.34010014, 5.7756904e-07, 0.24313726)
+
+[node name="Icon" type="AnimatedSprite2D" parent="."]
+position = Vector2(67, 16)
+sprite_frames = SubResource("SpriteFrames_lu0xe")
+animation = &"land"
+
+[node name="ButtonLeft" type="Button" parent="."]
+visibility_layer = 0
+offset_left = 56.0
+offset_top = 23.0
+offset_right = 65.0
+offset_bottom = 33.0
+
+[node name="LeftButtonIcon" type="AnimatedSprite2D" parent="."]
+position = Vector2(62, 28)
+rotation = 1.5707964
+sprite_frames = SubResource("SpriteFrames_7gft5")
+
+[node name="ButtonRight" type="Button" parent="."]
+visibility_layer = 0
+offset_left = 69.0
+offset_top = 23.0
+offset_right = 78.0
+offset_bottom = 33.0
+
+[node name="RightButtonIcon" type="AnimatedSprite2D" parent="."]
+position = Vector2(71, 27)
+rotation = -1.5707964
+sprite_frames = SubResource("SpriteFrames_wgmej")
+
+[node name="PriceLabel" type="RichTextLabel" parent="."]
+offset_left = 78.0
+offset_top = 4.0
+offset_right = 109.0
+offset_bottom = 28.0
+text = "100"
+
+[node name="CoinIcon" type="AnimatedSprite2D" parent="."]
+position = Vector2(116, 16)
+sprite_frames = SubResource("SpriteFrames_4722f")
+
+[node name="BuyButtonBackground" type="ColorRect" parent="."]
+offset_left = 80.0
+offset_top = 25.0
+offset_right = 122.0
+offset_bottom = 42.0
+color = Color(0.827451, 0.101960786, 0.101960786, 1)
+
+[node name="BuyButton" type="Button" parent="."]
+visibility_layer = 0
+offset_left = 80.0
+offset_top = 25.0
+offset_right = 122.0
+offset_bottom = 42.0
+
+[connection signal="pressed" from="ButtonLeft" to="." method="_on_button_left_pressed"]
+[connection signal="pressed" from="ButtonRight" to="." method="_on_button_right_pressed"]
+[connection signal="pressed" from="BuyButton" to="." method="_on_buy_button_pressed"]

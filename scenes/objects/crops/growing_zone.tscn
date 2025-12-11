@@ -95,7 +95,7 @@ animations = [{
 "speed": 0.4
 }, {
 "frames": [],
-"loop": true,
+"loop": false,
 "name": &"none",
 "speed": 0.0
 }, {
@@ -154,7 +154,7 @@ shape = SubResource("RectangleShape2D_6itiw")
 
 [node name="Plant" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_wwkdd")
-animation = &"tomatoGrowing"
+animation = &"none"
 
 [node name="CarrotTimer" type="Timer" parent="."]
 wait_time = 5.0
