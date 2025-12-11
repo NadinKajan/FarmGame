@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=4 format=3 uid="uid://iwvcsisbe360"]
+
+[ext_resource type="Script" uid="uid://7ank74iob5k6" path="res://scripts/inventory/inventory_item.gd" id="1_0bdr8"]
+[ext_resource type="Texture2D" uid="uid://b1jvbfap7f7s4" path="res://assets/game/sprout_lands/Objects/Basic Plants.png" id="2_xvjp5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3p7vc"]
+atlas = ExtResource("2_xvjp5")
+region = Rect2(80, 16, 16, 16)
+
+[resource]
+script = ExtResource("1_0bdr8")
+name = "tomato"
+texture = SubResource("AtlasTexture_3p7vc")
+metadata/_custom_type_script = "uid://7ank74iob5k6"

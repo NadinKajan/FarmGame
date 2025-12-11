@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://7wm3jwodyk5l"]
+
+[ext_resource type="Script" uid="uid://dhvqs7mpsp7pf" path="res://crop_collectible.gd" id="1_0r5wv"]
+[ext_resource type="PackedScene" uid="uid://cnc1md4dokjc0" path="res://scenes/components/collectible_component.tscn" id="2_64q63"]
+
+[node name="CropCollectible" type="Node2D"]
+script = ExtResource("1_0r5wv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollectibleComponent" parent="." instance=ExtResource("2_64q63")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollectibleComponent"]

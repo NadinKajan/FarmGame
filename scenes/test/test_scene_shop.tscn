@@ -14,7 +14,7 @@
 atlas = ExtResource("8_aeyxf")
 region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_5ldce"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_j5322"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -90,4 +90,4 @@ text = "= 0"
 
 [node name="CoinIcon" type="AnimatedSprite2D" parent="."]
 position = Vector2(800, 385)
-sprite_frames = SubResource("SpriteFrames_5ldce")
+sprite_frames = SubResource("SpriteFrames_j5322")

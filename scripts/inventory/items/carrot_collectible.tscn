@@ -8,14 +8,15 @@ atlas = ExtResource("1_ewjf5")
 region = Rect2(63.504692, 46.069138, 18.115257, 19.202667)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ewjf5"]
-radius = 8.0
+radius = 9.0
 
 [node name="Carrot" type="Sprite2D"]
 texture = SubResource("AtlasTexture_2jb7w")
 
 [node name="CollectibleComponent" parent="." instance=ExtResource("1_wq63o")]
-collectible_name = "log"
+collectible_name = "carrot"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollectibleComponent"]
+position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_ewjf5")
 debug_color = Color(0.23156276, 0.63100046, 0.27786982, 0.41960785)

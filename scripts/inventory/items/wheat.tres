@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=4 format=3 uid="uid://b6dxe2jpgraq0"]
+
+[ext_resource type="Script" uid="uid://7ank74iob5k6" path="res://scripts/inventory/inventory_item.gd" id="1_0dbty"]
+[ext_resource type="Texture2D" uid="uid://nlp3gj46r60i" path="res://assets/game/Cute_Fantasy_Free/Outdoor decoration/Outdoor_Decor_Free.png" id="2_ewjui"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k661c"]
+atlas = ExtResource("2_ewjui")
+region = Rect2(96.34578, 47.90869, 16.156998, 16.698631)
+
+[resource]
+script = ExtResource("1_0dbty")
+name = "wheat"
+texture = SubResource("AtlasTexture_k661c")
+metadata/_custom_type_script = "uid://7ank74iob5k6"
