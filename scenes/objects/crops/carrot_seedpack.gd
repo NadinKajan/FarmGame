@@ -12,7 +12,7 @@ func _on_area_2d_input_event(viewport, event, shape_idx):
 	if Input.is_action_just_pressed("hit"):
 		Global.plantSelected = seed_type
 		selected = true
-		Global.isDraggingSeed
+		Global.isDraggingSeed = true
 		
 		
 func _physics_process(delta):

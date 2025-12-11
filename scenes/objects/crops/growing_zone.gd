@@ -9,6 +9,7 @@ var plantDone = false
 @export var wheat_item: InventoryItem
 @export var tomato_item: InventoryItem
 
+
 func _ready() -> void:
 	reset_plot()
 
@@ -60,13 +61,25 @@ func _on_TomatoTimer_timeout():
 		
 func _on_area_2d_input_event(viewport, event, shape_idx):
 	if Input.is_action_just_pressed("hit") and not Global.isDraggingSeed:
+		var item_to_give: InventoryItem = null
+		
 		match plant:
 			1:
+				item_to_give = carrot_item
 				Global.numCarrots += 1
 			2:
+				item_to_give = wheat_item
 				Global.numWheat += 1
 			3:
+				item_to_give = tomato_item
 				Global.numTomatoes += 1
+				
+		if item_to_give != null:
+			var player := get_tree().get_first_node_in_group("player") as Player
+			if player:
+				player.collect(item_to_give)
+			else:
+				push_error("GrowingZone: No Player found in 'player' group.")
 				
 		reset_plot()
 		
@@ -84,28 +97,3 @@ func reset_plot() -> void:
 	$Plant.animation = "none"
 	$Plant.frame = 0
 	
-func _spawn_crop_collectible():
-	if crop_collectible_scene == null:
-		push_error("GrowingZone: crop scene not assigned.")
-		return
-	
-	var collectible := crop_collectible_scene.instantiate() as Node2D
-	collectible.global_position = global_position
-	var item_to_give: InventoryItem = null
-	
-	match plant:
-		1:
-			item_to_give = carrot_item
-		2:
-			item_to_give = wheat_item
-		3: 
-			item_to_give = tomato_item
-			
-	if item_to_give == null:
-		push_error("GrowingZone: item for plant " + str(plant) + " not assigned.")
-	else:
-		var cc := collectible.get_node_or_null("CollectibleComponent")
-		if cc:
-			cc.item = item_to_give
-		
-	get_parent().add_child(collectible)

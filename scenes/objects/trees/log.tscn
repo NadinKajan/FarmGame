@@ -1,11 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://huv1c823b6vg"]
+[gd_scene load_steps=7 format=3 uid="uid://huv1c823b6vg"]
 
 [ext_resource type="Texture2D" uid="uid://x10l70tosctu" path="res://assets/game/sprout_lands/Objects/Basic Grass Biom things 1.png" id="1_bcctm"]
 [ext_resource type="PackedScene" uid="uid://cnc1md4dokjc0" path="res://scenes/components/collectible_component.tscn" id="2_e2a05"]
+[ext_resource type="Script" uid="uid://7ank74iob5k6" path="res://scripts/inventory/inventory_item.gd" id="3_s5rqd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e2a05"]
 atlas = ExtResource("1_bcctm")
 region = Rect2(80, 32, 16, 16)
+
+[sub_resource type="Resource" id="Resource_xm6ke"]
+script = ExtResource("3_s5rqd")
+metadata/_custom_type_script = "uid://7ank74iob5k6"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_s5rqd"]
 radius = 8.0
@@ -15,6 +20,7 @@ texture = SubResource("AtlasTexture_e2a05")
 
 [node name="CollectibleComponent" parent="." instance=ExtResource("2_e2a05")]
 collectible_name = "log"
+item = SubResource("Resource_xm6ke")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollectibleComponent"]
 shape = SubResource("CircleShape2D_s5rqd")
