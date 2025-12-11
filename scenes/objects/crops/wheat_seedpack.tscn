@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://blc61wagicaul"]
+
+[ext_resource type="Script" uid="uid://dsrkeat7uuoss" path="res://scenes/objects/crops/wheat_seedpack.gd" id="1_f7ek7"]
+[ext_resource type="Texture2D" uid="uid://nlp3gj46r60i" path="res://assets/game/Cute_Fantasy_Free/Outdoor decoration/Outdoor_Decor_Free.png" id="2_dyfst"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_40eux"]
+atlas = ExtResource("2_dyfst")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v2w45"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_40eux")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vxg1b"]
+radius = 7.0
+
+[node name="WheatSeedpack" type="StaticBody2D"]
+script = ExtResource("1_f7ek7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_v2w45")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_vxg1b")
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

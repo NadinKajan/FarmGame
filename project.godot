@@ -18,6 +18,7 @@ config/icon="res://assets/game/icon.svg"
 [autoload]
 
 Inventory="*res://scripts/inventory/inventory_script.gd"
+Global="*res://global.gd"
 
 [display]
 

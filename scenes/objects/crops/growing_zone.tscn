@@ -1,0 +1,160 @@
+[gd_scene load_steps=21 format=3 uid="uid://cpjjp6h4qahcv"]
+
+[ext_resource type="Script" uid="uid://crmkueo12fckn" path="res://scenes/objects/crops/growing_zone.gd" id="1_8f6d6"]
+[ext_resource type="Texture2D" uid="uid://bhjopnl87s8g6" path="res://assets/game/sprout_lands/Tilesets/Tilled_Dirt_Wide.png" id="1_x1ipn"]
+[ext_resource type="Texture2D" uid="uid://nlp3gj46r60i" path="res://assets/game/Cute_Fantasy_Free/Outdoor decoration/Outdoor_Decor_Free.png" id="2_8f6d6"]
+[ext_resource type="Texture2D" uid="uid://pmqtx0hvqosd" path="res://assets/game/sprout_lands/Objects/Basic_Plants.png" id="3_bcec3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ekv0v"]
+atlas = ExtResource("1_x1ipn")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j2jsi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ekv0v")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6itiw"]
+size = Vector2(13, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_da1b5"]
+atlas = ExtResource("2_8f6d6")
+region = Rect2(48, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bet1v"]
+atlas = ExtResource("2_8f6d6")
+region = Rect2(64, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i0jrw"]
+atlas = ExtResource("2_8f6d6")
+region = Rect2(48, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mi1ac"]
+atlas = ExtResource("2_8f6d6")
+region = Rect2(64, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0orls"]
+atlas = ExtResource("3_bcec3")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vvhws"]
+atlas = ExtResource("3_bcec3")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3i7vq"]
+atlas = ExtResource("3_bcec3")
+region = Rect2(48, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y2m8j"]
+atlas = ExtResource("3_bcec3")
+region = Rect2(64, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ij7kx"]
+atlas = ExtResource("2_8f6d6")
+region = Rect2(80, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f2cb7"]
+atlas = ExtResource("2_8f6d6")
+region = Rect2(96, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rtfm5"]
+atlas = ExtResource("2_8f6d6")
+region = Rect2(80, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0srmf"]
+atlas = ExtResource("2_8f6d6")
+region = Rect2(96, 32, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wwkdd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_da1b5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bet1v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i0jrw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mi1ac")
+}],
+"loop": false,
+"name": &"carrotGrowing",
+"speed": 1.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"none",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0orls")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vvhws")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3i7vq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y2m8j")
+}],
+"loop": false,
+"name": &"tomatoGrowing",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ij7kx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f2cb7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rtfm5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0srmf")
+}],
+"loop": false,
+"name": &"wheatGrowing",
+"speed": 1.0
+}]
+
+[node name="GrowingZone" type="StaticBody2D"]
+script = ExtResource("1_8f6d6")
+
+[node name="TilledDirt" type="AnimatedSprite2D" parent="."]
+position = Vector2(0.5, 0.5)
+scale = Vector2(1.0625, 1.0625)
+sprite_frames = SubResource("SpriteFrames_j2jsi")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visible = false
+shape = SubResource("RectangleShape2D_6itiw")
+
+[node name="Plant" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_wwkdd")
+animation = &"none"
+
+[node name="CarrotTimer" type="Timer" parent="."]
+wait_time = 5.0
+
+[node name="WheatTimer" type="Timer" parent="."]
+wait_time = 5.0
+
+[node name="TomatoTimer" type="Timer" parent="."]
+wait_time = 5.0
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
