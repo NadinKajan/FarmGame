@@ -1,0 +1,67 @@
+[gd_scene load_steps=11 format=3 uid="uid://bycar56kirn2i"]
+
+[ext_resource type="Script" uid="uid://d1lmtwte25uta" path="res://scenes/shop/sell_zone.gd" id="1_k06jh"]
+[ext_resource type="Texture2D" uid="uid://de8l5k806ju4m" path="res://assets/game/Coin_Gems/MonedaD.png" id="1_mlsqb"]
+[ext_resource type="PackedScene" uid="uid://dvbo50culko58" path="res://scenes/components/interactable_component.tscn" id="3_sqmtp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k06jh"]
+atlas = ExtResource("1_mlsqb")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sqmtp"]
+atlas = ExtResource("1_mlsqb")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_61ag0"]
+atlas = ExtResource("1_mlsqb")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_62urj"]
+atlas = ExtResource("1_mlsqb")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kasea"]
+atlas = ExtResource("1_mlsqb")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wkar0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k06jh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sqmtp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_61ag0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_62urj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kasea")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sqmtp"]
+radius = 11.0
+
+[node name="SellZone" type="StaticBody2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_k06jh")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_wkar0")
+frame_progress = 0.98433393
+
+[node name="InteractableComponent" parent="." instance=ExtResource("3_sqmtp")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableComponent"]
+shape = SubResource("CircleShape2D_sqmtp")
+
+[connection signal="body_entered" from="InteractableComponent" to="." method="_on_interactable_component_body_entered"]

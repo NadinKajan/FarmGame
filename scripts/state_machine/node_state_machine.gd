@@ -41,6 +41,9 @@ func transition_to(node_state_name: String) -> void:
 
 	if current_node_state and key == current_node_state_name:
 		return
+		
+	if Global.isDraggingSeed:
+		return
 
 	var new_node_state: NodeState = node_states.get(key)
 	if new_node_state == null:

@@ -5,10 +5,7 @@ var plantGrowing = false
 var plantDone = false
 
 func _ready() -> void:
-	plantGrowing = false
-	plantDone = false
-	$Plant.frame = 0
-	$Plant.play("none")
+	reset_plot()
 
 func _physics_process(delta):
 	if !plantGrowing:
@@ -55,3 +52,30 @@ func _on_TomatoTimer_timeout():
 	elif tomato_plant.frame == 3:
 		plantDone = true
 		
+		
+func _on_area_2d_input_event(viewport, event, shape_idx):
+	if Input.is_action_just_pressed("hit") and not Global.isDraggingSeed:
+		match plant:
+			1:
+				Global.numCarrots += 1
+			2:
+				Global.numWheat += 1
+			3:
+				Global.numTomatoes += 1
+				
+		reset_plot()
+		
+		print("Number of carrots: " + str(Global.numCarrots))
+		print("Number of Wheat: " + str(Global.numWheat))
+		print("Number of Tomatoes: " + str(Global.numTomatoes))
+		
+		
+func reset_plot() -> void:
+	plantGrowing = false
+	plantDone = false
+	plant = 0
+	
+	$Plant.stop()
+	$Plant.animation = "none"
+	$Plant.frame = 0
+	
