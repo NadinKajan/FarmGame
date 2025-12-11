@@ -28,32 +28,32 @@ func _physics_process(delta):
 			$PriceLabel.text = "1"
 			if Global.coins >= carrotPrice:
 				if not carrotOwned:
-					$BuyButtonBackground.color = "353ad31a" # green
+					$BuyButtonBackground.color = "0ae81a" # green
 				else:
-					$BuyButtonBackground.color = "35d31a1a" # red 
+					$BuyButtonBackground.color = "d31a1a" # red 
 			else:
-				$BuyButtonBackground.color = "35d31a1a" # red
+				$BuyButtonBackground.color = "d31a1a" # red
 					
 		elif item == 2:
 			$Icon.play("wheatSeed")
 			$PriceLabel.text = "5"
 			if Global.coins >= wheatPrice:
 				if not wheatOwned:
-					$BuyButtonBackground.color = "353ad31a" # green
+					$BuyButtonBackground.color = "0ae81a" # green
 				else:
-					$BuyButtonBackground.color = "35d31a1a" # red 
+					$BuyButtonBackground.color = "d31a1a" # red 
 			else:
-				$BuyButtonBackground.color = "35d31a1a" # red
+				$BuyButtonBackground.color = "d31a1a" # red
 		elif item == 3:
 			$Icon.play("tomatoSeed")
 			$PriceLabel.text = "10"
 			if Global.coins >= tomatoPrice:
 				if not tomatoOwned:
-					$BuyButtonBackground.color = "353ad31a" # green
+					$BuyButtonBackground.color = "0ae81a" # green
 				else:
-					$BuyButtonBackground.color = "35d31a1a" # red 
+					$BuyButtonBackground.color = "d31a1a" # red 
 			else:
-				$BuyButtonBackground.color = "35d31a1a" # red
+				$BuyButtonBackground.color = "d31a1a" # red
 		elif item == 4:
 			var current_land_price = get_land_price()
 			$Icon.play("land")
@@ -61,11 +61,11 @@ func _physics_process(delta):
 			
 			if Global.coins >= current_land_price and landPurchased < landCap:
 				if landPurchased <= landCap:
-					$BuyButtonBackground.color = "353ad31a" # green
+					$BuyButtonBackground.color = "0ae81a" # green
 				else:
-					$BuyButtonBackground.color = "35d31a1a" # red 
+					$BuyButtonBackground.color = "d31a1a" # red 
 			else:
-				$BuyButtonBackground.color = "35d31a1a" # red
+				$BuyButtonBackground.color = "d31a1a" # red
 
 func _on_button_left_pressed():
 	swap_item_back()

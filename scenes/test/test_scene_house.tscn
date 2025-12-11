@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=4 uid="uid://bxectow7wj2bt"]
+[gd_scene load_steps=4 format=4 uid="uid://bxectow7wj2bt"]
 
 [ext_resource type="TileSet" uid="uid://bsiobq885lg42" path="res://TileSets/game_tile_set.tres" id="1_6qx8m"]
 [ext_resource type="PackedScene" uid="uid://by3ebmdoptpve" path="res://scenes/characters/player/player.tscn" id="2_8ykp8"]
+[ext_resource type="TileSet" uid="uid://bdsu545uaac7a" path="res://TileSets/house_tileset.tres" id="2_mu3l2"]
 
 [node name="TestSceneHouse" type="Node2D"]
 
@@ -20,7 +21,7 @@ tile_set = ExtResource("1_6qx8m")
 [node name="Houses" type="TileMapLayer" parent="GameTilemap"]
 position = Vector2(164, 18)
 tile_map_data = PackedByteArray("AAAFAAcAAQAAAAAAAQA=")
-tile_set = ExtResource("1_6qx8m")
+tile_set = ExtResource("2_mu3l2")
 
 [node name="Player" parent="." instance=ExtResource("2_8ykp8")]
 position = Vector2(246, 136)

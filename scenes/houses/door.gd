@@ -8,12 +8,12 @@ func _ready() -> void:
 	interactable_component.interactable_deactivated.connect(on_interactable_deactivated)
 	collision_layer = 1
 	
-func on_interactable_activated() -> void:
+func on_interactable_activated(body) -> void:
 	animated_sprite_2d.play("open_door")
 	collision_layer = 2
 	print("activated")
 	
-func on_interactable_deactivated() -> void:
+func on_interactable_deactivated(body) -> void:
 	animated_sprite_2d.play("close_door")
 	collision_layer = 1
 	print("deactivated")

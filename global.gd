@@ -8,4 +8,4 @@ var numTomatoes = 0
 var isDraggingSeed = false
 
 # Shop Interactions
-var coins = 100
+var coins = 0
